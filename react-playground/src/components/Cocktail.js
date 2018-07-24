@@ -1,8 +1,7 @@
 import React from 'react';
-const API_KEY = `${process.env.REACT_APP_API_KEY}`;
-let url = 'http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=' + API_KEY;
+let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
 
-class Weather extends React.Component {
+class Cocktail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,12 +40,13 @@ class Weather extends React.Component {
     } else {
       return (
         <div>
-          <div>OpenWeatherMapAPI<br></br>The temperature in London is:</div>
-          <div>{result.main.temp}</div>
+          <div>CocktailDBAPI - Margarita instructions:</div>
+          <br></br>
+          <div>{result.drinks[0].strInstructions}</div>
         </div>
       );
     }
   }
 }
 
-export default Weather;
+export default Cocktail;
