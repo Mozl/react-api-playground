@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Weather from '/home/louis/projects/react-api-playground/react-playground/src/components/Weather.js';
 import Cocktail from '/home/louis/projects/react-api-playground/react-playground/src/components/Cocktail.js';
+import SearchBar from '/home/louis/projects/react-api-playground/react-playground/src/components/SearchBar.js'
 
 const divStyle = {
   fontSize: 70,
@@ -29,6 +30,10 @@ class App extends Component {
         <p className="cocktail-api">
           <Cocktail />
         </p>
+
+        <div>
+          <SearchBar />
+        </div>
       </div>
     );
   }
