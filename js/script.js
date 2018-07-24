@@ -1,7 +1,7 @@
 const APP_KEY = process.env.API_KEY;
 const URL = process.env.URL;
 
-let url = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=a5ecde71d07e5c6eccf45b7e5023acaf&units=metric';
+let url = 'http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APP_ID={APP_KEY)';
 
 fetch(url)
  .then(response => response.json())
@@ -14,4 +14,3 @@ fetch(url)
   console.log('There was an error', error);
  });
 
- 
