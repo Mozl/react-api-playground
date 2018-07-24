@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Weather from '/home/louis/projects/react-api-playground/react-playground/src/components/Weather.js';
-import Cocktail from '/home/louis/projects/react-api-playground/react-playground/src/components/Cocktail.js';
-import SearchBar from '/home/louis/projects/react-api-playground/react-playground/src/components/SearchBar.js'
+import Weather from '../src/components/Weather.js';
+import Cocktail from '../src/components/Cocktail.js';
+import SearchBar from '../src/components/SearchBar.js'
 
 const divStyle = {
   fontSize: 70,
@@ -25,7 +25,7 @@ class App extends Component {
           <Weather />
         </p>
 
-        <img src= 'https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg' height="200px" width ="200px"></img>
+        <img src='https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg' height="200px" width ="200px"></img>
 
         <p className="cocktail-api">
           <Cocktail />
