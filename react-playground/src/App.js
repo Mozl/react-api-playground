@@ -5,7 +5,6 @@ import Cocktail from '../src/components/Cocktail';
 import SearchBar from '../src/components/SearchBar'
 import DishList from '../src/components/DishList';
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 const divStyle = {
   fontSize: 70,

@@ -39,7 +39,7 @@ class DishList extends React.Component {
       });
 
       return (
-        <ul>
+        <ul className="col-md-4 list-group">
           {dishItems}
         </ul>
       );
