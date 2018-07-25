@@ -35,7 +35,7 @@ class DishList extends React.Component {
       return <div>Loading...</div>;
     } else {
       const dishItems = this.state.dishes.meals.map(function(dish) {
-        return <DishItem dish={dish}/>
+        return <DishItem dish={dish} key={dish.idMeal}/>
       });
 
       return (
