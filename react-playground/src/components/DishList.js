@@ -27,7 +27,7 @@ class DishList extends React.Component {
   }
 
   render() {
-    console.log(this.state.dishes.meals[0].idMeal)
+    console.log(this.state.dishes.meals)
     const { error, isLoaded } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
