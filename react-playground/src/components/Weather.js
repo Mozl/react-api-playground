@@ -21,7 +21,6 @@ class Weather extends React.Component {
             isLoaded: true,
             result: result
           });
-          console.log(result)
         },
         (error) => {
           this.setState({

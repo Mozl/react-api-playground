@@ -1,24 +1,20 @@
 import React from 'react';
-let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
-class Cocktail extends React.Component {
+class DishList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    };
+    this.state = { dishes: [] };
   }
 
   componentDidMount() {
     fetch(url)
       .then(res => res.json())
       .then(
-        (result) => {
+        (dishes) => {
           this.setState({
             isLoaded: true,
-            result: result
+            dishes
           });
         },
         (error) => {
@@ -31,7 +27,8 @@ class Cocktail extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, result } = this.state;
+    console.log(this.state.dishes.meals[0].idMeal)
+    const { error, isLoaded } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -39,13 +36,13 @@ class Cocktail extends React.Component {
     } else {
       return (
         <div>
-          <div>CocktailDBAPI - Margarita instructions:</div>
-          <br></br>
-          <div>{result.drinks[0].strInstructions}</div>
+          <ul>
+            {/* {this.state.dishes[0]} */}
+          </ul>
         </div>
       );
     }
   }
 }
 
-export default Cocktail;
+export default DishList;
