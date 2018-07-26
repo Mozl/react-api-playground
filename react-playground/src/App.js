@@ -68,13 +68,6 @@ class App extends Component {
         <div>
           <SearchBar dishes={dishes.meals}/>
         </div>
-
-        {/* <div>
-          <DishList
-            dishes={selectedDish}
-            onDishSelect={selectedDish => this.setState({selectedDish})}
-            />
-        </div> */}
       </div>
     );
   }

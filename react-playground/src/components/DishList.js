@@ -37,7 +37,6 @@ class DishList extends React.Component {
       const dishItems = this.state.dishes.meals.map(function(dish) {
         return (
           <DishItem
-            // onDishSelect={onDishSelect}
             dish={dish}
             key={dish.idMeal}
             />

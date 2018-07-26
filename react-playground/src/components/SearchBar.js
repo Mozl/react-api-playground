@@ -1,6 +1,4 @@
 import React from 'react';
-import DishItem from './DishItem';
-import DishList from './DishList';
 let url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 class SearchBar extends React.Component {
@@ -31,7 +29,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const { dishes } = this.props;
     const { result } = this.state;
 
     console.table(result && result.meals)
