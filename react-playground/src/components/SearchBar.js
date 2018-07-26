@@ -1,16 +1,18 @@
 import React from 'react';
+import DishItem from './DishItem';
+import DishList from './DishList';
 let url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    term: ""
+  };
 
-    this.state = { term: '' };
-  }
-
-  componentDidMount() {
-    let searchTerm = this.state.term;
-    fetch(url+searchTerm)
+  searchAPI = (searchTerm) => {
+    this.setState({
+      term: searchTerm
+    })
+    fetch(`${url}${searchTerm}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -29,16 +31,33 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    const { dishes } = this.props;
+    const { result } = this.state;
+
+    console.table(result && result.meals)
+
     return (
       <div>
         <div>
           <input
             value={this.state.term}
-            onChange={event => this.setState({ term: event.target.value })} />
+            onChange={event => this.searchAPI(event.target.value)} />
         </div>
 
         <div>
-          {this.state.term}
+          {result &&
+            result.meals.map(({ strMealThumb, idMeal }) =>
+              <img height="200px" width="200px" key={idMeal} src={strMealThumb}></img>
+            )
+          }
+        </div>
+
+        <div>
+          {result &&
+            result.meals.map(({ strMeal, idMeal }) =>
+              <div>{strMeal}</div>
+            )
+          }
         </div>
       </div>
     );

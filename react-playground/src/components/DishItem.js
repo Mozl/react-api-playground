@@ -1,8 +1,7 @@
 import React from 'react';
 
-const DishItem = ({dish}) => {
+const DishItem = ({dish, onDishSelect}) => {
   const imageUrl = dish.strMealThumb
-  console.log(dish)
   return (
     <li className="list-group-item">
       <div>

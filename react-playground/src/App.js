@@ -4,6 +4,7 @@ import Weather from '../src/components/Weather';
 import Cocktail from '../src/components/Cocktail';
 import SearchBar from '../src/components/SearchBar'
 import DishList from '../src/components/DishList';
+
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 const divStyle = {
@@ -16,6 +17,14 @@ const pStyle = {
 };
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dishes: [],
+      selectedDish: null
+    };
+  }
 
   componentDidMount() {
     fetch(url)
@@ -24,7 +33,8 @@ class App extends Component {
         (dishes) => {
           this.setState({
             isLoaded: true,
-            dishes: dishes
+            dishes: dishes,
+            selectedDish: dishes[0]
           });
         },
         (error) => {
@@ -37,6 +47,8 @@ class App extends Component {
   }
 
   render() {
+    const { dishes, selectedDish } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -54,12 +66,15 @@ class App extends Component {
         </div>
 
         <div>
-          <SearchBar />
+          <SearchBar dishes={dishes.meals}/>
         </div>
 
-        <div>
-          <DishList />
-        </div>
+        {/* <div>
+          <DishList
+            dishes={selectedDish}
+            onDishSelect={selectedDish => this.setState({selectedDish})}
+            />
+        </div> */}
       </div>
     );
   }

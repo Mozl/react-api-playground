@@ -35,8 +35,14 @@ class DishList extends React.Component {
       return <div>Loading...</div>;
     } else {
       const dishItems = this.state.dishes.meals.map(function(dish) {
-        return <DishItem dish={dish} key={dish.idMeal}/>
-      });
+        return (
+          <DishItem
+            // onDishSelect={onDishSelect}
+            dish={dish}
+            key={dish.idMeal}
+            />
+        )
+        });
 
       return (
         <ul className="col-md-4 list-group">
