@@ -3,7 +3,6 @@ import './App.css';
 import Weather from '../src/components/Weather';
 import Cocktail from '../src/components/Cocktail';
 import SearchBar from '../src/components/SearchBar'
-import DishList from '../src/components/DishList';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
@@ -22,7 +21,6 @@ class App extends Component {
 
     this.state = {
       dishes: [],
-      selectedDish: null
     };
   }
 
@@ -34,7 +32,6 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             dishes: dishes,
-            selectedDish: dishes[0]
           });
         },
         (error) => {
@@ -47,7 +44,7 @@ class App extends Component {
   }
 
   render() {
-    const { dishes, selectedDish } = this.state;
+    const { dishes } = this.state;
 
     return (
       <div className="App">

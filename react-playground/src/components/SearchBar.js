@@ -1,6 +1,10 @@
 import React from 'react';
 let url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
+const divStyle = {
+  marginTop: 20,
+};
+
 class SearchBar extends React.Component {
   state = {
     term: ""
@@ -35,7 +39,10 @@ class SearchBar extends React.Component {
 
     return (
       <div>
-        <div>
+        <h2 style={divStyle}>
+          Search for a meal below:
+        </h2>
+        <div style={divStyle}>
           <input
             value={this.state.term}
             onChange={event => this.searchAPI(event.target.value)} />
@@ -51,7 +58,7 @@ class SearchBar extends React.Component {
 
         <div>
           {result &&
-            result.meals.map(({ strMeal, idMeal }) =>
+            result.meals.map(({ strMeal }) =>
               <div>{strMeal}</div>
             )
           }

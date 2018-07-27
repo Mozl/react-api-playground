@@ -1,6 +1,10 @@
 import React from 'react';
 let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
 
+const divStyle = {
+  marginTop: 20,
+};
+
 class Cocktail extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +42,7 @@ class Cocktail extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div style={divStyle}>
           <div>CocktailDBAPI - Margarita instructions:</div>
           <br></br>
           <div>{result.drinks[0].strInstructions}</div>

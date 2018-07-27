@@ -2,6 +2,10 @@ import React from 'react';
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=' + API_KEY;
 
+const divStyle = {
+  marginTop: 20,
+};
+
 class Weather extends React.Component {
   constructor(props) {
     super(props);
@@ -39,9 +43,9 @@ class Weather extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div style={divStyle}>
           <div>OpenWeatherMapAPI<br></br>The temperature in London is:</div>
-          <div>{result.main.temp}</div>
+          <div>{result.main.temp}°C</div>
         </div>
       );
     }
