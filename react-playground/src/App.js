@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Weather from '../src/components/Weather';
 import Cocktail from '../src/components/Cocktail';
-import SearchBar from '../src/components/SearchBar'
+import SearchBar from '../src/components/SearchBar';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 

@@ -7,8 +7,14 @@ const divStyle = {
 
 class SearchBar extends React.Component {
   state = {
-    term: ""
+    term: "",
   };
+
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
 
   searchAPI = (searchTerm) => {
     this.setState({
@@ -47,7 +53,6 @@ class SearchBar extends React.Component {
             value={this.state.term}
             onChange={event => this.searchAPI(event.target.value)} />
         </div>
-
         <div>
           {result &&
             result.meals.map(({ strMealThumb, idMeal }) =>
@@ -63,6 +68,15 @@ class SearchBar extends React.Component {
             )
           }
         </div>
+
+        <button onClick={this.toggleHidden.bind(this)}>
+          Show recipe
+        </button>
+          {this.state.isHidden && result &&
+              result.meals.map(({ strInstructions }) =>
+                <div>{strInstructions}</div>
+              )
+            }
       </div>
     );
   }
