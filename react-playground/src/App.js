@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 import './App.css';
 import Weather from '../src/components/Weather';
 import Cocktail from '../src/components/Cocktail';
 import SearchBar from '../src/components/SearchBar';
+import Crypto from '../src/components/Crypto';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 const divStyle = {
   fontSize: 70,
   margin: 20,
-};
+}
 
 const pStyle = {
   margin: 0,
@@ -49,9 +51,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 style={divStyle}>PLAYGROUND</h1>
-          <h1 style={pStyle} className="App-title">Welcome to the React API Playground</h1>
+          <h2 style={divStyle}>PLAYGROUND</h2>
         </header>
+        <h1 className="App-title">Welcome to the React API Playground by
+          <a href="https://github.com/Mozl"> Mozl</a>
+        </h1>
+
         <div className="weather-api">
           <Weather />
         </div>
@@ -64,6 +69,12 @@ class App extends Component {
 
         <div>
           <SearchBar dishes={dishes.meals}/>
+        </div>
+        <h2>
+          Cryptocurrency API
+        </h2>
+        <div className="crypto">
+          <Crypto />
         </div>
       </div>
     );
