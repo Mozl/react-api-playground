@@ -1,7 +1,7 @@
 {
   "name": "react-playground",
   "engines": {
-    "npm": "8.11.3"
+    "npm": "6.1.0"
   },
   "version": "0.1.0",
   "private": true,
